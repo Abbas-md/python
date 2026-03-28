@@ -17,3 +17,6 @@ jobs:
         
       - name: cp app.py
         run: scp -o StrictHostKeyChecking=no -i key.pem app.py ec2-user@3.108.51.98:/home/ec2-user/
+
+      - name: cp req.txt
+        run: scp -o StrictHostKeyChecking=no -i key.pem requirements.txt ec2-user@3.108.51.98:/home/ec2-user/
