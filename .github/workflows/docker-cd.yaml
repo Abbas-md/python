@@ -16,4 +16,4 @@ jobs:
           chmod 400 key.pem
   
       - name: Push Image
-        run: ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@3.108.249.203 "sudo su && cd /home/ec2-user && yum install docker -y && echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin && docker pull ${{ secrets.DOCKER_USERNAME }}/myapp:latest && docker run -d -p 80:5001 myapp" 
+        run: ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@3.108.249.203 "cd /home/ec2-user && sudo yum install docker -y && echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin && docker pull ${{ secrets.DOCKER_USERNAME }}/myapp:latest && docker run -d -p 80:5001 myapp" 
