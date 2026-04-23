@@ -8,4 +8,7 @@ resource "aws_instance" "my-instance" {
   subnet_id = "subnet-067fefba38aba289d"
   key_name = "devops-key"
   security_groups = ["sg-061659dc1a3829f18"]
+tags = {
+ Name = "terraform-test"
+}
 }
